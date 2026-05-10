@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Summer school 2026 – Actor and Topic-Aware Stance Detection</title>
+<title>StanceNakba 2026 – Actor and Topic-Aware Stance Detection</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg: #0a0c10;
-    --bg2: #0f1218;
-    --bg3: #161b24;
-    --border: rgba(255,255,255,0.08);
+    --bg: #ffffff;
+    --bg2: #f8f9fa;
+    --bg3: #f0f2f5;
+    --border: rgba(0,0,0,0.1);
     --accent: #4f9eff;
     --accent2: #a78bfa;
     --accent3: #34d399;
-    --text: #e8eaf0;
-    --muted: #8892a4;
-    --card: rgba(255,255,255,0.04);
-    --card-hover: rgba(255,255,255,0.07);
+    --text: #1a1a1a;
+    --muted: #666666;
+    --card: rgba(0,0,0,0.03);
+    --card-hover: rgba(0,0,0,0.06);
     --pro-pal: #34d399;
     --pro-isr: #60a5fa;
     --neutral: #a78bfa;
@@ -46,7 +46,7 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 2rem;
     height: 60px;
-    background: rgba(10,12,16,0.85);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
@@ -85,7 +85,7 @@
     position: relative; overflow: hidden; padding: 8rem 2rem 4rem;
   }
   .hero-grid {
-    position: absolute; inset: 0; opacity: .15;
+    position: absolute; inset: 0; opacity: .08;
     background-image:
       linear-gradient(rgba(79,158,255,.3) 1px, transparent 1px),
       linear-gradient(90deg, rgba(79,158,255,.3) 1px, transparent 1px);
@@ -94,18 +94,18 @@
   }
   .hero-glow {
     position: absolute; width: 600px; height: 600px;
-    background: radial-gradient(ellipse, rgba(79,158,255,.12) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(79,158,255,.08) 0%, transparent 70%);
     top: -100px; right: -100px; pointer-events: none;
   }
   .hero-glow2 {
     position: absolute; width: 400px; height: 400px;
-    background: radial-gradient(ellipse, rgba(167,139,250,.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(167,139,250,.06) 0%, transparent 70%);
     bottom: -50px; left: -50px; pointer-events: none;
   }
   .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
   .hero-badge {
     display: inline-flex; align-items: center; gap: .5rem;
-    background: rgba(79,158,255,.1); border: 1px solid rgba(79,158,255,.25);
+    background: rgba(79,158,255,.08); border: 1px solid rgba(79,158,255,.3);
     padding: .3rem .9rem; border-radius: 100px;
     font-size: .75rem; font-weight: 600; color: var(--accent);
     letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.5rem;
@@ -117,7 +117,7 @@
     font-size: clamp(2.4rem, 5vw, 4rem);
     line-height: 1.15;
     margin-bottom: 1.5rem;
-    color: #fff;
+    color: #000;
   }
   h1 em { font-style: italic; color: var(--accent); }
   .hero-desc {
@@ -132,7 +132,7 @@
     border-left: 2px solid var(--accent); padding-left: 1rem;
   }
   .stat-num {
-    font-family: 'DM Serif Display', serif; font-size: 2rem; color: #fff; line-height: 1;
+    font-family: 'DM Serif Display', serif; font-size: 2rem; color: #000; line-height: 1;
   }
   .stat-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: .25rem; }
   .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -143,18 +143,18 @@
     transition: all .2s; cursor: pointer; border: none;
   }
   .btn-primary {
-    background: var(--accent); color: #000;
+    background: var(--accent); color: #fff;
   }
-  .btn-primary:hover { background: #7ab8ff; transform: translateY(-1px); }
+  .btn-primary:hover { background: #2a8aff; transform: translateY(-1px); }
   .btn-outline {
     background: transparent; color: var(--text); border: 1px solid var(--border);
   }
-  .btn-outline:hover { background: var(--card); border-color: rgba(255,255,255,.2); }
+  .btn-outline:hover { background: var(--card); border-color: rgba(0,0,0,.2); }
   .btn-ghost {
     background: transparent; color: var(--muted); border: 1px solid var(--border);
     font-size: .8rem; padding: .5rem 1.2rem;
   }
-  .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,.2); }
+  .btn-ghost:hover { color: var(--text); border-color: rgba(0,0,0,.2); }
 
   /* ── SECTIONS ── */
   section { padding: 6rem 2rem; }
@@ -169,7 +169,7 @@
   h2 {
     font-family: 'DM Serif Display', serif;
     font-size: clamp(1.8rem, 3vw, 2.8rem);
-    color: #fff; margin-bottom: 1rem; line-height: 1.2;
+    color: #000; margin-bottom: 1rem; line-height: 1.2;
   }
   .section-sub { color: var(--muted); font-size: 1rem; max-width: 640px; line-height: 1.8; margin-bottom: 3rem; }
 
@@ -181,9 +181,9 @@
     border-radius: 14px; padding: 1.8rem;
     transition: background .2s, border-color .2s, transform .2s;
   }
-  .card:hover { background: var(--card-hover); border-color: rgba(255,255,255,.15); transform: translateY(-2px); }
+  .card:hover { background: var(--card-hover); border-color: rgba(0,0,0,.15); transform: translateY(-2px); }
   .card-icon { font-size: 1.6rem; margin-bottom: 1rem; }
-  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .5rem; color: #fff; }
+  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .5rem; color: #000; }
   .card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
 
   /* ── TASKS ── */
@@ -204,7 +204,7 @@
   }
   .letter-a { background: rgba(79,158,255,.15); color: var(--accent); border: 1px solid rgba(79,158,255,.3); }
   .letter-b { background: rgba(167,139,250,.15); color: var(--accent2); border: 1px solid rgba(167,139,250,.3); }
-  .task-header-info h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: .25rem; }
+  .task-header-info h3 { font-size: 1rem; font-weight: 600; color: #000; margin-bottom: .25rem; }
   .task-header-info p { font-size: .83rem; color: var(--muted); }
   .task-body { padding: 1.5rem 1.8rem; }
   .tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.4rem; }
@@ -245,7 +245,7 @@
   #evaluation { background: var(--bg2); }
   .eval-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start; }
   .eval-primary {
-    background: linear-gradient(135deg, rgba(79,158,255,.12), rgba(167,139,250,.08));
+    background: linear-gradient(135deg, rgba(79,158,255,.08), rgba(167,139,250,.06));
     border: 1px solid rgba(79,158,255,.25);
     border-radius: 16px; padding: 2rem; text-align: center;
   }
@@ -259,7 +259,7 @@
   }
   .eval-check { width: 22px; height: 22px; border-radius: 50%; background: rgba(52,211,153,.15); border: 1px solid rgba(52,211,153,.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .eval-check svg { width: 12px; height: 12px; stroke: var(--accent3); }
-  .eval-metric-name { font-weight: 600; font-size: .92rem; color: #fff; }
+  .eval-metric-name { font-weight: 600; font-size: .92rem; color: #000; }
   .eval-metric-desc { font-size: .8rem; color: var(--muted); margin-top: .1rem; }
   .eval-note { margin-top: 1.5rem; font-size: .85rem; color: var(--muted); background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; line-height: 1.7; }
   .eval-note strong { color: var(--text); }
@@ -274,8 +274,8 @@
   .tl-dot.warning { border-color: #f59e0b; background: rgba(245,158,11,.15); }
   .tl-dot .inner { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
   .tl-date { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: var(--accent); margin-bottom: .2rem; }
-  .tl-title { font-size: .95rem; font-weight: 600; color: #fff; }
-  .tl-note { display: inline-flex; align-items: center; gap: .3rem; margin-top: .3rem; font-size: .75rem; color: #f59e0b; background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2); padding: .15rem .6rem; border-radius: 100px; }
+  .tl-title { font-size: .95rem; font-weight: 600; color: #000; }
+  .tl-note { display: inline-flex; align-items: center; gap: .3rem; margin-top: .3rem; font-size: .75rem; color: #f59e0b; background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2); padding: .25rem .6rem; border-radius: 100px; }
 
   /* ── FAQ ── */
   #guidelines { background: var(--bg2); }
@@ -285,7 +285,7 @@
   }
   .faq-q {
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-    padding: 1rem 1.2rem; cursor: pointer; font-size: .92rem; font-weight: 500; color: #fff;
+    padding: 1rem 1.2rem; cursor: pointer; font-size: .92rem; font-weight: 500; color: #000;
     transition: background .15s;
   }
   .faq-q:hover { background: var(--card-hover); }
@@ -314,7 +314,7 @@
     font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #fff;
     margin: 0 auto 1rem;
   }
-  .org-name { font-size: .88rem; font-weight: 600; color: #fff; margin-bottom: .3rem; line-height: 1.3; }
+  .org-name { font-size: .88rem; font-weight: 600; color: #000; margin-bottom: .3rem; line-height: 1.3; }
   .org-affil { font-size: .75rem; color: var(--muted); line-height: 1.4; }
 
   /* ── LEADERBOARD ── */
@@ -325,7 +325,7 @@
     cursor: pointer; border: 1px solid var(--border); color: var(--muted); background: transparent;
     transition: all .2s;
   }
-  .lb-tab.active { background: var(--accent); color: #000; border-color: var(--accent); }
+  .lb-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .lb-panel { display: none; }
   .lb-panel.active { display: block; }
   .lb-table { width: 100%; border-collapse: collapse; }
@@ -333,7 +333,7 @@
     font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted);
     padding: .7rem 1rem; border-bottom: 1px solid var(--border); text-align: left;
   }
-  .lb-table td { padding: .9rem 1rem; font-size: .88rem; border-bottom: 1px solid rgba(255,255,255,.04); }
+  .lb-table td { padding: .9rem 1rem; font-size: .88rem; border-bottom: 1px solid rgba(0,0,0,.04); }
   .lb-table tbody tr:hover td { background: var(--card); }
   .lb-empty { text-align: center; padding: 3rem; color: var(--muted); font-size: .9rem; }
   .rank-medal { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: .75rem; font-weight: 700; }
@@ -369,9 +369,9 @@
     padding: 2rem;
   }
   .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-  .modal-header h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #fff; }
+  .modal-header h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #000; }
   .modal-close { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1.4rem; line-height: 1; }
-  .modal-close:hover { color: #fff; }
+  .modal-close:hover { color: #000; }
 
   /* ── FOOTER ── */
   footer {
@@ -467,11 +467,11 @@
   <div class="container">
     <span class="section-tag">// Research Overview</span>
     <h2>About the Task</h2>
-    <p class="section-sub">The StanceNakba 2026 Shared Task addresses stance detection in polarized social media discourse on the Palestinian-Israeli conflict and related regional issues, introducing a dual-framework approach.</p>
+    <p class="section-sub">The StanceNakba 2026 Shared Task addresses stance detection in polarized social media discourse on the Palestinian-Israeli conflict and related regional issues, introducing a novel dual-framework evaluation.</p>
     <div style="font-size:.95rem;color:var(--muted);line-height:1.85;max-width:800px;margin-bottom:3rem;">
-      Participants will develop models to analyze social media posts across two subtasks: <strong style="color:var(--text)">Subtask A (Actor-Level Stance Detection)</strong> identifies whether authors express Pro-Palestine, Pro-Israel, or Neutral orientations toward the Palestinian-Israeli conflict, while <strong style="color:var(--text)">Subtask B (Cross-Topic Stance Detection)</strong> detects Favor, Against, or Neither stances toward specific conflict-related topics.
+      Participants will develop models to analyze social media posts across two subtasks: <strong style="color:var(--text)">Subtask A (Actor-Level Stance Detection)</strong> identifies whether authors lean Pro-Palestine, Pro-Israel, or remain Neutral, while <strong style="color:var(--text)">Subtask B (Cross-Topic Stance Detection)</strong> classifies positions on specific regional issues (Normalization with Israel, Refugee/Immigrant Presence) as Favor, Against, or Neither.
       <br/><br/>
-      This dual-framework enables investigation of fundamental questions: <em style="color:var(--accent2)">How do general political alignments (actors) relate to positions on specific issues (targets)? Can models learn generalizable stance patterns that transfer across different topics?</em>
+      This dual-framework enables investigation of fundamental questions: <em style="color:var(--accent2)">How do general political alignments (actors) relate to positions on specific issues (targets)? Can a unified model handle diverse, context-dependent stances?</em>
     </div>
     <div class="overview-grid fade-up">
       <div class="card">
@@ -796,11 +796,11 @@ const faqs = [
   ["How do I sign up?","Follow the instructions on the CodaBench competition pages for each subtask, linked in the Participate section."],
   ["Can I join multiple tasks?","Yes, you can participate in multiple different shared tasks simultaneously."],
   ["Can I be on multiple teams under the same task?","This depends on the task. Contact the organizers to confirm their policy."],
-  ["What does 'evaluation period' mean?","The evaluation period is the window in which official competition takes place. Organizers release evaluation data at the start; system outputs are due before the end."],
+  ["What does 'evaluation period' mean?","The evaluation period is the window in which official competition takes place. Organizers release evaluation data at the start; system outputs are due before the deadline."],
   ["How many runs can I submit?","This depends on the task. Task organizers often specify the allowed number per team. Check the task website or contact organizers."],
   ["Do I need to write a paper?","Yes. If you register and request the dataset, you agree to submit a paper. It is a binding commitment."],
   ["What happens if I don't submit a paper?","Strictly prohibited. Abandoning the task after receiving data may result in being banned from future participation."],
-  ["What is the paper format?","Short papers following NakbaNLP 2026 format (up to 4 pages + unlimited references). Templates: <a href='https://lrec2026.info/authors-kit' target='_blank'>LaTeX/Word templates</a>. Submission: <a href='https://softconf.com/lrec2026/NakbaNLP2026/user/' target='_blank'>Softconf</a>."],
+  ["What is the paper format?","Short papers following NakbaNLP 2026 format (up to 4 pages + unlimited references). Templates: <a href='https://lrec2026.info/authors-kit' target='_blank'>LaTeX/Word templates</a>"],
   ["How should the paper title be formatted?","Use: <strong>&lt;Team Name&gt; at &lt;Shared Task Name&gt;: &lt;Title&gt;</strong>"],
   ["Must I cite the task overview paper?","Yes, each team must cite the shared task overview paper in their system paper."],
   ["Must someone attend the conference?","Attendance in person is recommended, but virtual participation is possible if you cannot attend in person."],
@@ -840,3 +840,4 @@ document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
+
